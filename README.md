@@ -1,5 +1,5 @@
 # [TypeScript + React] :watermelon: Emoji Selector
-This is a emoji selector like slack.<br>
+This is an emoji selector like slack.<br>
 
 ![image](https://user-images.githubusercontent.com/7352476/87250506-50585880-c4a0-11ea-922d-34bee8516eab.png)
 
@@ -30,6 +30,8 @@ interface SampleState {
 class Sample extends React.Component<SampleProps, SampleState> {
   constructor(props: SampleProps) {
     super(props)
+
+    // initial emoji list
     this.state = {
       emojis: [
         {
@@ -43,9 +45,11 @@ class Sample extends React.Component<SampleProps, SampleState> {
     }
   }
 
+  /**
+   * clicked emoji event
+   */
   onClickEmoji(name: string) {
     const emojiList = [ ...this.state.emojis ]
-    console.log(this.state)
     for (const e of emojiList) {
       if (e.name === name) {
         e.count++
@@ -57,6 +61,9 @@ class Sample extends React.Component<SampleProps, SampleState> {
     })
   }
 
+  /**
+   * added emoji event
+   */
   onAddEmoji(name: string) {
     const emojiList = [ ...this.state.emojis ]
     emojiList.push({
@@ -80,5 +87,4 @@ class Sample extends React.Component<SampleProps, SampleState> {
 }
 
 export default Sample
-
 ```
