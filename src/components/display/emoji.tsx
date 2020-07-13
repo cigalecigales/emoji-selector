@@ -3,8 +3,9 @@ import emoji from 'node-emoji'
 import styled from 'styled-components'
 
 interface EmojiProps {
-  name: string // emoji's name
+  name: string
   count: number
+  onClickEmoji: Function
 }
 
 interface EmojiState {
@@ -29,12 +30,14 @@ class Emoji extends React.Component<EmojiProps, EmojiState> {
   }
 
   render() {
+    const { name } = this.props
+
     return (
       <EmojiStyle hovered={this.state.hovered}>
         <div
           onMouseEnter={() => {this.setState({ hovered: true })}}
           onMouseLeave={() => {this.setState({ hovered: false })}}
-          onClick={() => this.onClick()}
+          onClick={() => this.props.onClickEmoji(name)}
           className="container"
         >
           <span>{emoji.get(this.props.name)}</span>

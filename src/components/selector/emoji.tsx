@@ -1,12 +1,10 @@
 import React from 'react'
 import emoji from 'node-emoji'
 import styled from 'styled-components'
-import { connect } from 'react-redux'
-import { addEmoji } from '../../store/actions'
 
 interface EmojiProps {
   name: string
-  addEmoji: typeof addEmoji
+  onAddEmoji: Function
 }
 
 interface EmojiState {
@@ -24,17 +22,15 @@ class Emoji extends React.Component<EmojiProps, EmojiState> {
     }
   }
 
-  onClick() {
-    this.props.addEmoji(this.props.name)
-  }
-
   render() {
+    const { name } = this.props
+
     return (
       <EmojiStyle hovered={this.state.hovered}>
         <div
           onMouseEnter={() => {this.setState({ hovered: true })}}
           onMouseLeave={() => {this.setState({ hovered: false })}}
-          onClick={() => this.onClick()}
+          onClick={() => this.props.onAddEmoji(name)}
           className="container"
         >
           <span>{emoji.get(this.props.name)}</span>
@@ -43,10 +39,6 @@ class Emoji extends React.Component<EmojiProps, EmojiState> {
     )
   }
 }
-
-const mapDispatchToProps = ({
-  addEmoji
-})
 
 /**
  * Emoji styles
@@ -87,7 +79,4 @@ const handleEmojiStyle = ( hovered: boolean ) => {
   `  
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Emoji)
+export default Emoji

@@ -5,6 +5,7 @@ import { emojis } from '../data/emojis'
 
 interface EmojiSelectorProps {
   show: boolean
+  onAddEmoji: Function
 }
 
 interface EmojiSelectorState {
@@ -26,7 +27,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
     const emojiList: JSX.Element[] = []
 
     Object.keys(emojis).forEach((key: string) => {
-      emojiList.push(<Emoji name={key} key={key} />)
+      emojiList.push(<Emoji name={key} key={key} onAddEmoji={this.props.onAddEmoji} />)
     })
 
     return (

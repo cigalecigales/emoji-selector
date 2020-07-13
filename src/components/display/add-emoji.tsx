@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import EmojiSelector from '../selector/emoji-selector'
 
 interface AddEmojiProps {
-
+  onAddEmoji: Function
 }
 
 interface AddEmojiState {
@@ -39,7 +39,7 @@ class AddEmoji extends React.Component<AddEmojiProps, AddEmojiState> {
         >
           <span>+</span>
         </div>
-        <EmojiSelector show={this.state.show} />
+        <EmojiSelector show={this.state.show} onAddEmoji={this.props.onAddEmoji} />
       </AddEmojiStyle>
     )
   }
