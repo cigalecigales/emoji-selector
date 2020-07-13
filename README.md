@@ -8,8 +8,7 @@ Work in progress now... :muscle:
 ## how to install
 
 ```bash
-$ npm i
-$ npm start
+$ npm i @cigalecigales/emoji-selector
 ```
 
 ## sample
