@@ -30,11 +30,12 @@ var EmojiList = /** @class */ (function (_super) {
     EmojiList.prototype.render = function () {
         var _this = this;
         return (React.createElement(EmojiListStyle, null,
-            this.props.emojis.map(function (_a) {
-                var name = _a.name, count = _a.count;
-                return (React.createElement(Emoji, { name: name, count: count, key: name + count, onClickEmoji: _this.props.onClickEmoji }));
-            }),
-            React.createElement(AddEmoji, { onAddEmoji: this.props.onAddEmoji })));
+            React.createElement("div", { style: { background: 'red' }, onClick: function (e) { return console.log(e); } },
+                this.props.emojis.map(function (_a) {
+                    var name = _a.name, count = _a.count;
+                    return (React.createElement(Emoji, { name: name, count: count, key: name + count, onClickEmoji: _this.props.onClickEmoji }));
+                }),
+                React.createElement(AddEmoji, { onAddEmoji: this.props.onAddEmoji }))));
     };
     return EmojiList;
 }(React.Component));

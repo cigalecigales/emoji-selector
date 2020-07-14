@@ -21,7 +21,7 @@ class EmojiList extends React.Component<EmojisProps> {
   render() {
     return (
       <EmojiListStyle>
-        <div onClick={e => console.log(e)}>
+        <div style={{background: 'red'}} onClick={e => console.log(e)}>
         {this.props.emojis.map(({ name, count }) => (
           <Emoji name={name} count={count} key={name + count} onClickEmoji={this.props.onClickEmoji} />
         ))}
