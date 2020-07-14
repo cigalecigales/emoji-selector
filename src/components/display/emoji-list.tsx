@@ -19,7 +19,7 @@ interface EmojisProps {
  */
 class EmojiList extends React.Component<EmojisProps> {
   test(e: React.MouseEvent<HTMLInputElement>) {
-    const target = e.currentTarget.name
+    const target = e.currentTarget
     console.log(target)
   }
 

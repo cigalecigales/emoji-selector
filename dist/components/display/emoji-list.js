@@ -28,7 +28,7 @@ var EmojiList = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     EmojiList.prototype.test = function (e) {
-        var target = e.currentTarget.name;
+        var target = e.currentTarget;
         console.log(target);
     };
     EmojiList.prototype.render = function () {
