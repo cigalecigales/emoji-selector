@@ -18,20 +18,13 @@ interface EmojisProps {
  * EmojiList component
  */
 class EmojiList extends React.Component<EmojisProps> {
-  test(e: React.MouseEvent<HTMLInputElement>) {
-    const target = e.currentTarget
-    console.log(target)
-  }
-
   render() {
     return (
       <EmojiListStyle>
-        <div style={{background: 'red'}} onClick={this.test}>
         {this.props.emojis.map(({ name, count }) => (
           <Emoji name={name} count={count} key={name + count} onClickEmoji={this.props.onClickEmoji} />
         ))}
         <AddEmoji onAddEmoji={this.props.onAddEmoji} />
-        </div>
       </EmojiListStyle>
     )
   }
