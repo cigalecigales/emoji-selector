@@ -12,6 +12,7 @@ interface EmojisProps {
  * EmojiList component
  */
 declare class EmojiList extends React.Component<EmojisProps> {
+    test(e: React.MouseEvent<HTMLInputElement>): void;
     render(): JSX.Element;
 }
 export default EmojiList;
