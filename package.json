@@ -1,6 +1,6 @@
 {
   "name": "@cigalecigales/emoji-selector",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/EmojiSelector.js",
   "types": "dist/EmojiSelector.d.ts",
   "description": "an emoji selector like slack.",
