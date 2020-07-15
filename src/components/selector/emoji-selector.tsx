@@ -29,8 +29,8 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
 
     this.state = {
       fileter: '',
-      allEmojiList: emojiList,
-      filteredEmojiList: emojiList
+      allEmojiList: [...emojiList],
+      filteredEmojiList: [...emojiList]
     }
 
     this.onInput = this.onInput.bind(this)
@@ -45,7 +45,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
       if (key) {
         return key.startsWith(value)
       }
-      return false
+      return true
     })
 
     this.setState({
@@ -96,7 +96,7 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
     border-radius: 5px;
 
     &:focus {
-      outline: none;
+      outline: 0;
     }
   }
 `
