@@ -54,6 +54,7 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
   position: absolute;
   top: 30px;
   background: #ffffff;
+  z-index: 1000;
   ${({ show }) => {
     return show ? '' : 'display: none;'
   }};
