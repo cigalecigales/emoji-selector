@@ -5,7 +5,8 @@ interface EmojiSelectorProps {
 }
 interface EmojiSelectorState {
     fileter: string;
-    emojiList: JSX.Element[];
+    allEmojiList: JSX.Element[];
+    filteredEmojiList: JSX.Element[];
 }
 /**
  * EmojiSelector component

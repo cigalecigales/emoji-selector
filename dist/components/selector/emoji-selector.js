@@ -39,14 +39,15 @@ var EmojiSelector = /** @class */ (function (_super) {
         });
         _this.state = {
             fileter: '',
-            emojiList: emojiList
+            allEmojiList: emojiList,
+            filteredEmojiList: emojiList
         };
         _this.onInput = _this.onInput.bind(_this);
         return _this;
     }
     EmojiSelector.prototype.onInput = function (e) {
         var value = e.target.value;
-        var emojiList = __spreadArrays(this.state.emojiList);
+        var emojiList = __spreadArrays(this.state.allEmojiList);
         var filteredList = emojiList.filter(function (element) {
             var key = String(element.key);
             if (key) {
@@ -55,21 +56,21 @@ var EmojiSelector = /** @class */ (function (_super) {
             return false;
         });
         this.setState({
-            emojiList: filteredList
+            filteredEmojiList: filteredList
         });
     };
     EmojiSelector.prototype.render = function () {
         return (React.createElement(EmojiSelectorStyle, { show: this.props.show },
             React.createElement("input", { type: 'text', onInput: this.onInput, placeholder: '検索', className: "filter" }),
-            React.createElement("div", { className: "emojiList" }, this.state.emojiList)));
+            React.createElement("div", { className: "emojiList" }, this.state.filteredEmojiList)));
     };
     return EmojiSelector;
 }(React.Component));
 /**
  * EmojiSelector styles
  */
-var EmojiSelectorStyle = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  background: #ffffff;\n  z-index: 1000;\n  ", ";\n\n  .emojiList {\n    text-align: center;\n  }\n\n  .filter {\n    border: 1px solid rgba(29,28,29,0.2);\n    line-height: 25px;\n    margin-top: 5px;\n    width: 325px;\n    border-radius: 5px;\n\n    &:focus {\n      user-select: none;\n    }\n  }\n"], ["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  background: #ffffff;\n  z-index: 1000;\n  ",
-    ";\n\n  .emojiList {\n    text-align: center;\n  }\n\n  .filter {\n    border: 1px solid rgba(29,28,29,0.2);\n    line-height: 25px;\n    margin-top: 5px;\n    width: 325px;\n    border-radius: 5px;\n\n    &:focus {\n      user-select: none;\n    }\n  }\n"])), function (_a) {
+var EmojiSelectorStyle = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  background: #ffffff;\n  z-index: 1000;\n  ", ";\n\n  .emojiList {\n    text-align: center;\n  }\n\n  .filter {\n    border: 1px solid rgba(29,28,29,0.2);\n    line-height: 25px;\n    margin-top: 5px;\n    width: 325px;\n    border-radius: 5px;\n\n    &:focus {\n      outline: none;\n    }\n  }\n"], ["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  background: #ffffff;\n  z-index: 1000;\n  ",
+    ";\n\n  .emojiList {\n    text-align: center;\n  }\n\n  .filter {\n    border: 1px solid rgba(29,28,29,0.2);\n    line-height: 25px;\n    margin-top: 5px;\n    width: 325px;\n    border-radius: 5px;\n\n    &:focus {\n      outline: none;\n    }\n  }\n"])), function (_a) {
     var show = _a.show;
     return show ? '' : 'display: none;';
 });
