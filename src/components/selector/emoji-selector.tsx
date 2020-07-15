@@ -53,6 +53,7 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
   word-wrap: break-word;
   position: absolute;
   top: 30px;
+  background: #ffffff;
   ${({ show }) => {
     return show ? '' : 'display: none;'
   }};

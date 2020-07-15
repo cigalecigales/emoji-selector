@@ -35,7 +35,7 @@ class EmojiList extends React.Component<EmojisProps> {
  */
 const EmojiListStyle = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: start;
 `
 
