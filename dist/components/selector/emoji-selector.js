@@ -45,7 +45,7 @@ var EmojiSelector = /** @class */ (function (_super) {
 /**
  * EmojiSelector styles
  */
-var EmojiSelectorStyle = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  ", ";\n\n  .emojiList {\n    text-align: center;\n  }\n"], ["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  ",
+var EmojiSelectorStyle = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  background: #ffffff;\n  ", ";\n\n  .emojiList {\n    text-align: center;\n  }\n"], ["\n  font-size: 22px;\n  box-sizing: border-box;\n  width: 360px;\n  height: 200px;\n  overflow-y: scroll;\n  border: 1px solid rgba(29, 28, 29, 0.2);\n  word-wrap: break-word;\n  position: absolute;\n  top: 30px;\n  background: #ffffff;\n  ",
     ";\n\n  .emojiList {\n    text-align: center;\n  }\n"])), function (_a) {
     var show = _a.show;
     return show ? '' : 'display: none;';

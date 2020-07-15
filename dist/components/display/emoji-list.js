@@ -41,7 +41,7 @@ var EmojiList = /** @class */ (function (_super) {
 /**
  * EmojiList styles
  */
-var EmojiListStyle = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: start;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: start;\n"])));
+var EmojiListStyle = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: left;\n  align-items: start;\n"], ["\n  display: flex;\n  justify-content: left;\n  align-items: start;\n"])));
 export default EmojiList;
 var templateObject_1;
 //# sourceMappingURL=emoji-list.js.map
