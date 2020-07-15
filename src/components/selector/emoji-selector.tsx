@@ -36,16 +36,25 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
 
   onInput(e: React.FormEvent<HTMLInputElement>) {
     const { value } = e.target as HTMLInputElement
-    console.log(value)
+
+    const emojiList = [...this.state.emojiList]
+    const filteredList = emojiList.filter((element: JSX.Element) => {
+      const key = String(element.key)
+      if (key) {
+        return key.startsWith(value)
+      }
+      return false
+    })
+
     this.setState({
-      fileter: value
+      emojiList: filteredList
     })
   }
 
   render() {
     return (
       <EmojiSelectorStyle show={this.props.show}>
-        <input type={'text'} onInput={this.onInput} />
+        <input type={'text'} onInput={this.onInput} placeholder={'検索'} className="filter" />
         <div className="emojiList">
           {this.state.emojiList}
         </div>
@@ -75,6 +84,18 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
 
   .emojiList {
     text-align: center;
+  }
+
+  .filter {
+    border: 1px solid rgba(29,28,29,0.2);
+    line-height: 25px;
+    margin-top: 5px;
+    width: 325px;
+    border-radius: 5px;
+
+    &:focus {
+      user-select: none;
+    }
   }
 `
 
