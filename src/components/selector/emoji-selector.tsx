@@ -10,6 +10,7 @@ interface EmojiSelectorProps {
 
 interface EmojiSelectorState {
   fileter: string
+  emojiList: JSX.Element[]
 }
 
 /**
@@ -18,22 +19,33 @@ interface EmojiSelectorState {
 class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorState> {
   constructor(props: EmojiSelectorProps) {
     super(props)
-    this.state = {
-      fileter: ''
-    }
-  }
 
-  render() {
     const emojiList: JSX.Element[] = []
 
     Object.keys(emojis).forEach((key: string) => {
       emojiList.push(<Emoji name={key} key={key} onAddEmoji={this.props.onAddEmoji} />)
     })
 
+    this.state = {
+      fileter: '',
+      emojiList: emojiList
+    }
+  }
+
+  onChange(e: React.ChangeEvent<HTMLDivElement>) {
+    const { value } = e.target as HTMLInputElement
+    this.setState({
+      fileter: value
+    })
+    console.log(value)
+  }
+
+  render() {
     return (
       <EmojiSelectorStyle show={this.props.show}>
+        <input type={'text'} onChange={this.onChange} />
         <div className="emojiList">
-          {emojiList}
+          {this.state.emojiList}
         </div>
       </EmojiSelectorStyle>
     )
