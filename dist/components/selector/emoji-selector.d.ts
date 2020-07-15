@@ -12,7 +12,7 @@ interface EmojiSelectorState {
  */
 declare class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorState> {
     constructor(props: EmojiSelectorProps);
-    onChange(e: React.ChangeEvent<HTMLDivElement>): void;
+    onInput(e: React.FormEvent<HTMLInputElement>): void;
     render(): JSX.Element;
 }
 export default EmojiSelector;

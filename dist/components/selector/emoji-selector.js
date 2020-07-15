@@ -36,16 +36,16 @@ var EmojiSelector = /** @class */ (function (_super) {
         };
         return _this;
     }
-    EmojiSelector.prototype.onChange = function (e) {
+    EmojiSelector.prototype.onInput = function (e) {
         var value = e.target.value;
+        console.log(value);
         this.setState({
             fileter: value
         });
-        console.log(value);
     };
     EmojiSelector.prototype.render = function () {
         return (React.createElement(EmojiSelectorStyle, { show: this.props.show },
-            React.createElement("input", { type: 'text', onChange: this.onChange }),
+            React.createElement("input", { type: 'text', onInput: this.onInput }),
             React.createElement("div", { className: "emojiList" }, this.state.emojiList)));
     };
     return EmojiSelector;

@@ -32,18 +32,18 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
     }
   }
 
-  onChange(e: React.ChangeEvent<HTMLDivElement>) {
+  onInput(e: React.FormEvent<HTMLInputElement>) {
     const { value } = e.target as HTMLInputElement
+    console.log(value)
     this.setState({
       fileter: value
     })
-    console.log(value)
   }
 
   render() {
     return (
       <EmojiSelectorStyle show={this.props.show}>
-        <input type={'text'} onChange={this.onChange} />
+        <input type={'text'} onInput={this.onInput} />
         <div className="emojiList">
           {this.state.emojiList}
         </div>
