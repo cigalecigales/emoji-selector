@@ -34,6 +34,7 @@ var EmojiSelector = /** @class */ (function (_super) {
             fileter: '',
             emojiList: emojiList
         };
+        _this.onInput = _this.onInput.bind(_this);
         return _this;
     }
     EmojiSelector.prototype.onInput = function (e) {

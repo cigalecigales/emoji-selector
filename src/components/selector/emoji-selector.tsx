@@ -30,6 +30,8 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
       fileter: '',
       emojiList: emojiList
     }
+
+    this.onInput = this.onInput.bind(this)
   }
 
   onInput(e: React.FormEvent<HTMLInputElement>) {
