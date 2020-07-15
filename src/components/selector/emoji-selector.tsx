@@ -40,6 +40,14 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
     const { value } = e.target as HTMLInputElement
 
     const emojiList = [...this.state.allEmojiList]
+
+    if (value!) {
+      this.setState({
+        filteredEmojiList: [...this.state.allEmojiList]
+      })
+      return
+    }
+
     const filteredList = emojiList.filter((element: JSX.Element) => {
       const key = String(element.key)
       if (key) {
@@ -97,6 +105,7 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
 
     &:focus {
       outline: 0;
+      border: 1px solid rgba(29,28,29,0.7);
     }
   }
 `
