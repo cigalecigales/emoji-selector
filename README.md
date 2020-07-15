@@ -1,7 +1,7 @@
 # [TypeScript + React] :watermelon: Emoji Selector
 This is an emoji selector like slack.<br>
 
-![image](https://user-images.githubusercontent.com/7352476/87250506-50585880-c4a0-11ea-922d-34bee8516eab.png)
+![image](https://user-images.githubusercontent.com/7352476/87561515-c7d3f500-c6f7-11ea-918c-31bfa061474b.png)
 
 ## how to install
 
