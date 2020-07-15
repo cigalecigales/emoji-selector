@@ -10,7 +10,8 @@ interface EmojiSelectorProps {
 
 interface EmojiSelectorState {
   fileter: string
-  emojiList: JSX.Element[]
+  allEmojiList: JSX.Element[]
+  filteredEmojiList: JSX.Element[]
 }
 
 /**
@@ -28,7 +29,8 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
 
     this.state = {
       fileter: '',
-      emojiList: emojiList
+      allEmojiList: emojiList,
+      filteredEmojiList: emojiList
     }
 
     this.onInput = this.onInput.bind(this)
@@ -37,7 +39,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
   onInput(e: React.FormEvent<HTMLInputElement>) {
     const { value } = e.target as HTMLInputElement
 
-    const emojiList = [...this.state.emojiList]
+    const emojiList = [...this.state.allEmojiList]
     const filteredList = emojiList.filter((element: JSX.Element) => {
       const key = String(element.key)
       if (key) {
@@ -47,7 +49,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
     })
 
     this.setState({
-      emojiList: filteredList
+      filteredEmojiList: filteredList
     })
   }
 
@@ -56,7 +58,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
       <EmojiSelectorStyle show={this.props.show}>
         <input type={'text'} onInput={this.onInput} placeholder={'検索'} className="filter" />
         <div className="emojiList">
-          {this.state.emojiList}
+          {this.state.filteredEmojiList}
         </div>
       </EmojiSelectorStyle>
     )
@@ -94,7 +96,7 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
     border-radius: 5px;
 
     &:focus {
-      user-select: none;
+      outline: none;
     }
   }
 `
