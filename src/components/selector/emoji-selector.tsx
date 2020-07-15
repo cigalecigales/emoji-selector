@@ -41,7 +41,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
 
     const emojiList = [...this.state.allEmojiList]
 
-    if (!value) {
+    if (value === null || value === undefined) {
       this.setState({
         filteredEmojiList: [...this.state.allEmojiList]
       })

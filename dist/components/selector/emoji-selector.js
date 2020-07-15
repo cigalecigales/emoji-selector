@@ -48,7 +48,7 @@ var EmojiSelector = /** @class */ (function (_super) {
     EmojiSelector.prototype.onInput = function (e) {
         var value = e.target.value;
         var emojiList = __spreadArrays(this.state.allEmojiList);
-        if (!value) {
+        if (value === null || value === undefined) {
             this.setState({
                 filteredEmojiList: __spreadArrays(this.state.allEmojiList)
             });
