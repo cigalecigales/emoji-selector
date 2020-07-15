@@ -41,7 +41,7 @@ class EmojiSelector extends React.Component<EmojiSelectorProps, EmojiSelectorSta
 
     const emojiList = [...this.state.allEmojiList]
 
-    if (value!) {
+    if (!value) {
       this.setState({
         filteredEmojiList: [...this.state.allEmojiList]
       })
@@ -105,7 +105,7 @@ const EmojiSelectorStyle = styled.div<{ show: boolean }>`
 
     &:focus {
       outline: 0;
-      border: 1px solid rgba(29,28,29,0.7);
+      border: 1px solid rgba(29,28,29,0.5);
     }
   }
 `
